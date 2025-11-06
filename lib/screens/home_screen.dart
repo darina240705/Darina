@@ -16,6 +16,17 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 void main() {
+  ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const
+        DetailsScreen()),
+      );
+    },
+    child:const Text('Перейти на экран деталей'),
+  ),
+
   runApp(Container(
     padding: EdgeInsets.only(top:25, left:10, right:10),
     color: Colors.white,
