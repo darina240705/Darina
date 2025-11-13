@@ -60,21 +60,88 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // действие при нажатии
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: const Text('Каталог'),
+                        content: const Text('Здесь позже будет каталог.'),
+                        actions: <Widget>[
+                          TextButton(
+                            child: const Text('Отмена'),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                          TextButton(
+                            child: const Text('OK'),
+                            onRressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        ],
+                      );
+                    },
+                  );
                 },
                 child: const Text("Каталог"),
               ),
               const SizedBox(height: 10),
               ElevatedButton(
                 onPressed: () {
-                  // действие
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: const Text('Заказ и оплата'),
+                        content: const Text('Здесь позже будет заказ и оплата.'),
+                        actions: <Widget>[
+                          TextButton(
+                            child: const Text('Отмена'),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                          TextButton(
+                            child: const Text('OK'),
+                            onRressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        ],
+                      );
+                    },
+                  );
                 },
                 child: const Text("Заказ и оплата"),
               ),
               const SizedBox(height: 10),
               ElevatedButton(
                 onPressed: () {
-                  // действие
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: const Text('Где нас найти'),
+                          content: const Text('Здесь позже будет где нас найти.'),
+                          actions: <Widget>[
+                            TextButton(
+                              child: const Text('Отмена'),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                            TextButton(
+                              child: const Text('OK'),
+                              onRressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
                 },
                 child: const Text("Где нас найти"),
               ),
