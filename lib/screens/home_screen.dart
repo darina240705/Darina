@@ -9,81 +9,86 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _counter = 0;
+
   void _incrementCounter() {
     setState(() {
       _counter++;
-  });
-}
+    });
+  }
 
-void main() {
-  ElevatedButton(
-    onPressed: () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const
-        DetailsScreen()),
-      );
-    },
-    child:const Text('Перейти на экран деталей'),
-  ),
-
-  runApp(Container(
-    padding: EdgeInsets.only(top:25, left:10, right:10),
-    color: Colors.white,
-    child: Text("Кофе & Моменты",
-        textDirection: TextDirection.ltr,               // текст слева направо
-        textAlign: TextAlign.center,                    // выравнивание по центру
-        style: TextStyle(color: Colors.black87,         // черный цвет текста
-            fontSize: 35,                               // высота шрифта 35
-            backgroundColor: Colors.white               // белый цвет фона текста
-        )
-      )
-
-    child: Text("Сохраняйте больше моментов с кофе",
-        textDirection: TextDirection.ltr,               // текст слева направо
-        textAlign: TextAlign.center,                    // выравнивание по центру
-        style: TextStyle(color: Colors.black87,         // черный цвет текста
-            fontSize: 25,                               // высота шрифта 25
-            backgroundColor: Colors.white               // белый цвет фона текста
-        )
-      )
-    child: Text("Каталог",
-        textDirection: TextDirection.ltr,               // текст слева направо
-        textAlign: TextAlign.center,                    // выравнивание по центру
-        style: TextStyle(color: Colors.black87,         // черный цвет текста
-            fontSize: 20,                               // высота шрифта 20
-            backgroundColor: Colors.white               // белый цвет фона текста
-    )
-    onPressed:(){}                                      // нажатие кнопки
-    )
-    child: Text("Заказ и оплата",
-        textDirection: TextDirection.ltr,               // текст слева направо
-        textAlign: TextAlign.center,                    // выравнивание по центру
-        style: TextStyle(color: Colors.black87,         // черный цвет текста
-            fontSize: 20,                               // высота шрифта 20
-            backgroundColor: Colors.white               // белый цвет фона текста
-    )
-    onPressed:(){}                                      // нажатие кнопки
-    )
-    child: Text("Где нас найти",
-        textDirection: TextDirection.ltr,               // текст слева направо
-        textAlign: TextAlign.center,                    // выравнивание по центру
-        style: TextStyle(color: Colors.black87,         // черный цвет текста
-            fontSize: 20,                               // высота шрифта 20
-            backgroundColor: Colors.white               // белый цвет фона текста
-    )
-    onPressed:(){}                                      // нажатие кнопки
-    )
-    child: Text("Обратная связь",
-        textDirection: TextDirection.ltr,               // текст слева направо
-        textAlign: TextAlign.center,                    // выравнивание по центру
-        style: TextStyle(color: Colors.black87,         // черный цвет текста
-            fontSize: 20,                               // высота шрифта 20
-            backgroundColor: Colors.white               // белый цвет фона текста
-    )
-    onPressed:(){}                                      // нажатие кнопки
-    )
-  );
-  )
-}
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Главный экран')),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(top:25, left:10, right:10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const DetailsScreen()),
+                  );
+                },
+                child: const Text('Перейти на экран деталей'),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                "Кофе & Моменты",
+                textDirection: TextDirection.ltr,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  color: Colors.black87,
+                  fontSize: 35,
+                  backgroundColor: Colors.white,
+                ),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                "Сохраняйте больше моментов с кофе",
+                textDirection: TextDirection.ltr,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  color: Colors.black87,
+                  fontSize: 25,
+                  backgroundColor: Colors.white,
+                ),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  // действие при нажатии
+                },
+                child: const Text("Каталог"),
+              ),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () {
+                  // действие
+                },
+                child: const Text("Заказ и оплата"),
+              ),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () {
+                  // действие
+                },
+                child: const Text("Где нас найти"),
+              ),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () {
+                  // действие
+                },
+                child: const Text("Обратная связь"),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
